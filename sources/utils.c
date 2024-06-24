@@ -28,6 +28,7 @@ char	*get_line(char *file, int rand_num)
 	int		fd;
 
 	i = 0;
+	line = NULL;
 	fd = open(file, O_RDONLY);
 	if (fd < 0)
 	{
@@ -51,8 +52,6 @@ void	free_resources(t_game game)
 {
 	free(game.question);
 	free(game.answer);
-	game.question = NULL;
-	game.answer = NULL;
 }
 
 void	lower_case(char *str)
