@@ -78,6 +78,5 @@ void	play(t_game *game)
 		read_answer(answer, 100);
 		check_answer(game, answer);
 		free_resources(*game);
-		fget
 	}
 }
