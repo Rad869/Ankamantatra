@@ -6,11 +6,11 @@
 /*   By: hratsima <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:16:32 by hratsima          #+#    #+#             */
-/*   Updated: 2024/03/29 14:29:11 by hratsima         ###   ########.fr       */
+/*   Updated: 2024/06/24 12:22:19 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../includes/ankamantatra.h"
 
 static char	*ft_strjoin(char const *s1, char const *s2)
 {

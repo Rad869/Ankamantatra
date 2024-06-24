@@ -6,11 +6,11 @@
 /*   By: hratsima <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 15:19:39 by hratsima          #+#    #+#             */
-/*   Updated: 2024/03/13 15:24:14 by hratsima         ###   ########.fr       */
+/*   Updated: 2024/06/24 12:22:27 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../includes/ankamantatra.h"
 
 int	ft_strchr(char *s, char c)
 {
