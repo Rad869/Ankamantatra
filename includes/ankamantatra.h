@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ankamantatra.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhamed <bhamed@student.42antananarivo      +#+  +:+       +#+        */
+/*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:11:01 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/24 15:21:42 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/06/24 22:42:41 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,5 +36,7 @@ int		get_random_num(void);
 void	play(t_game *game);
 void	free_resources(t_game game);
 void	lower_case(char *str);
+void	initialise_head(int score);
+void	check_result(int score, int i);
 
 #endif

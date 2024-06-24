@@ -3,24 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   play.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bhamed <bhamed@student.42antananarivo      +#+  +:+       +#+        */
+/*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/24 15:17:53 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/06/24 23:18:55 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ankamantatra.h"
 
-static void	check_answer(t_game *game, char *answer)
+static int	check_answer(t_game *game, char *answer)
 {
 	lower_case(answer);
 	lower_case(game->answer);
 	if (strcmp(answer, game->answer) == 0)
+	{
 		printf(GRN"\nMarina\n\n"CRESET);
+		return (1);
+	}
 	else
+	{
 		printf(RED"\nDiso\n\n"CRESET);
+		return (0);
+	}
 	sleep(1);
+	return(0);
 }
 
 static void	init_question(t_game *game)
@@ -36,15 +43,41 @@ void	play(t_game *game)
 {
 	unsigned int	i;
 	char			answer[100];
+	int				check;
+	int				score;
 
 	i = 0;
-	while (++i <= 5)
+	check = 1;
+	score = 3;
+	while (check != -1 && score && i < 5)
 	{
-		printf("================\n Fanontaniana %d\n================\n", i);
-		init_question(game);
+		system("clear");
+		initialise_head(score);
+		printf("==============================================\n Fanontaniana %d\n==============================================\n", i + 1);
+		if (check == 1)
+		{
+			init_question(game);
+			i++;
+		}
+		check = 2;
 		printf("%s", game->question);
 		fgets(answer, 100, stdin);
-		check_answer(game, answer);
-		free_resources(*game);
+		if (answer[0] == 0x0E)
+		{
+			check = 1;
+			score--;
+			free_resources(*game);
+			continue ;
+		}
+		if (answer[0] == 27)
+		{
+			check = -1;
+			free_resources(*game);
+			continue ;
+		}
+		if (check_answer(game, answer))
+			check = 1;
 	}
+	system("clear");
+	check_result(score, i);
 }
