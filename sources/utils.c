@@ -36,7 +36,11 @@ char	*get_line(char *file, int rand_num)
 	}
 	while (i < rand_num)
 	{
+		if (line)
+			free(line);
 		line = get_next_line(fd);
+		if (line == NULL)
+			return (NULL);
 		i++;
 	}
 	close(fd);
