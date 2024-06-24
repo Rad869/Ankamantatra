@@ -22,6 +22,7 @@
 # include <fcntl.h>
 # include <stdio.h>
 # include <string.h>
+# include <ctype.h>
 # include <time.h>
 
 typedef struct s_game
@@ -32,6 +33,8 @@ typedef struct s_game
 
 char	*get_line(char *file, int rand_num);
 int		get_random_num(void);
-void	play(t_game *game, char **av);
+void	play(t_game *game);
+void	free_resources(t_game game);
+void	lower_case(char *str);
 
 #endif

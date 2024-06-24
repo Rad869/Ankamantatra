@@ -42,3 +42,23 @@ char	*get_line(char *file, int rand_num)
 	close(fd);
 	return (line);
 }
+
+void	free_resources(t_game game)
+{
+	free(game.question);
+	free(game.answer);
+	game.question = NULL;
+	game.answer = NULL;
+}
+
+void	lower_case(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		str[i] = tolower(str[i]);
+		i++;
+	}
+}

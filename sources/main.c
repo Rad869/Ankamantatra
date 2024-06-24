@@ -12,15 +12,10 @@
 
 #include "../includes/ankamantatra.h"
 
-int	main(int ac, char *av[])
+int	main(void)
 {
 	t_game	game;
 
-	if (ac != 3)
-	{
-		printf("Error: number of parameter");
-		return (1);
-	}
-	play(&game, av);
+	play(&game);
 	return (0);
 }

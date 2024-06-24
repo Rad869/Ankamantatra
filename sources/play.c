@@ -14,23 +14,25 @@
 
 static void	check_answer(t_game *game, char *answer)
 {
+	lower_case(answer);
+	lower_case(game->answer);
 	if (strcmp(answer, game->answer) == 0)
-		printf(GRN"\nTrue\n\n"CRESET);
+		printf(GRN"\nMarina\n\n"CRESET);
 	else
-		printf(RED"\nFalse\n\n"CRESET);
+		printf(RED"\nDiso\n\n"CRESET);
 	sleep(1);
 }
 
-static void	init_question(t_game *game, char **av)
+static void	init_question(t_game *game)
 {
 	int	rand_num;
-
+	
 	rand_num = get_random_num();
-	game->question = get_line(av[1], rand_num);
-	game->answer = get_line(av[2], rand_num);
+	game->question = get_line("data/questions.txt", rand_num);
+	game->answer = get_line("data/responses.txt", rand_num);
 }
 
-void	play(t_game *game, char **av)
+void	play(t_game *game)
 {
 	unsigned int	i;
 	char			answer[100];
@@ -39,9 +41,10 @@ void	play(t_game *game, char **av)
 	while (++i <= 5)
 	{
 		printf("================\n Fanontaniana %d\n================\n", i);
-		init_question(game, av);
+		init_question(game);
 		printf("%s", game->question);
 		fgets(answer, 100, stdin);
 		check_answer(game, answer);
+		free_resources(*game);
 	}
 }
