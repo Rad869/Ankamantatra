@@ -1,26 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bhamed <bhamed@student.42antananarivo      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/24 12:24:15 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/24 15:06:28 by bhamed           ###   ########.fr       */
+/*   Created: 2024/06/24 14:03:54 by bhamed            #+#    #+#             */
+/*   Updated: 2024/06/24 15:05:14 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ankamantatra.h"
 
-int	main(int ac, char *av[])
+int	get_random_num(void)
 {
-	t_game	game;
+	int	random;
 
-	if (ac != 3)
+	srand(time(0));
+	random = rand();
+	return ((random % NBR_QUEST) + 1);
+}
+
+char	*get_line(char *file, int rand_num)
+{
+	int		i;
+	char	*line;
+	int		fd;
+
+	i = 0;
+	fd = open(file, O_RDONLY);
+	if (fd < 0)
 	{
-		printf("Error: number of parameter");
-		return (1);
+		printf("Error: reading file");
+		return (NULL);
 	}
-	play(&game, av);
-	return (0);
+	while (i < rand_num)
+	{
+		line = get_next_line(fd);
+		i++;
+	}
+	close(fd);
+	return (line);
 }

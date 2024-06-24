@@ -6,7 +6,7 @@
 #    By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/24 10:52:34 by rrabeari          #+#    #+#              #
-#    Updated: 2024/06/24 12:28:39 by bhamed           ###   ########.fr        #
+#    Updated: 2024/06/24 15:07:00 by bhamed           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,9 @@ SRC_DIR   := sources
 
 SRC_FILES := main.c \
              get_next_line/get_next_line.c \
-             get_next_line/get_next_line_utils.c
+             get_next_line/get_next_line_utils.c \
+             play.c \
+             utils.c
 
 OBJ_DIR   := objs
 
@@ -36,7 +38,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@ rm -Rf $(OBJ_DIR)/
+	rm -Rf $(OBJ_DIR)/
 
 fclean: clean
 	rm -f $(NAME)
