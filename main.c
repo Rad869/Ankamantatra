@@ -43,11 +43,12 @@ int	main(int ac, char *av[])
 	rand_num = get_random_num();
 	game.question = get_line(av[1], rand_num);
 	game.answer = get_line(av[2], rand_num);
-	//  game.question = "fanontaniana";
-	//  game.answer = "valiny";
 	printf("Inona ary izany?\n");
 	printf("%s\n", game.question);
 	answer = get_next_line(0);
-	printf("answer = %s\n", answer);
+	if (ft_strncmp(answer, game.answer, str_len(answer)) == 0)
+		printf(">>>success<<<\n");
+	else
+		printf(">>>fail<<<\n");
 	return (0);
 }

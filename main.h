@@ -11,4 +11,8 @@ typedef struct s_game {
 	char *answer;
 }	t_game;
 
+/*utils*/
+int	str_len(const char *str);
+int	ft_strncmp(const char *s1, const char *s2, size_t n);
+
 #endif
