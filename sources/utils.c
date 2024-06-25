@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:03:54 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 06:49:15 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 08:23:11 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ char	*get_line(char *file, int rand_num)
 	return (line);
 }
 
-void	free_resources(t_game game)
+void	free_resources(t_data data)
 {
-	free(game.question);
-	free(game.answer);
+	free(data.question);
+	free(data.answer);
 }
 
 void	lower_case(char *str)

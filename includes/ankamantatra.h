@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:11:01 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 06:50:37 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 08:13:18 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@
 # include <ctype.h>
 # include <time.h>
 
-typedef struct s_game
+typedef struct s_data
 {
 	char	*question;
 	char	*answer;
-}			t_game;
+}			t_data;
 
 char	*get_line(char *file, int rand_num);
 int		get_random_num(void);
-void	play(t_game *game);
-void	free_resources(t_game game);
+void	play(t_data *data);
+void	free_resources(t_data data);
 void	lower_case(char *str);
 void	initialise_head(int score);
 void	check_result(int score, int i);
