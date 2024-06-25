@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:03:54 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 06:13:30 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 06:49:15 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,9 +70,8 @@ void	initialise_head(int score)
 {
 	const char	*hackamantatra;
 	const char	*doc;
-	const char	*score_char;
-
-
+	char		*score_char;
+	
 	hackamantatra = 
 "/*============================================================================================================*\\\n"
 "*                                                                                                              *\n"
@@ -91,8 +90,8 @@ void	initialise_head(int score)
 "*    ny valiny dia marina izany. Lalao natao mba hamerenana indray ny hasin'i tsipelina malagasy ity lalao     *\n"
 "*    ity sy natao ampianarana ny malagasy zavatra vaovao raha tsy fantany taloha. Raha anova ankamantatra      *\n"
 "*    ianao nefa tsy nahamarina akory ilay teo aloha dia very ny isa anananao. Mahazo mamerina foana anefa      *\n"
-"*    raha toha ka tsy mbola afa-po. Raha anova ankamantatra dia tsindrio ny \"CTRL + D\", raha tsy ilalao      *\n"
-"*    intsony dia tsindrio ny \"ESC\". Mahazoa fafinaretana ary o.                                              *\n"
+"*    raha toha ka tsy mbola afa-po. Raha anova ankamantatra dia tsindrio ny \"CTRL + N\", raha tsy ilalao        *\n"
+"*    intsony dia tsindrio ny \"ESC\". Mahazoa fafinaretana ary o.                                                *\n"
 "****************************************************************************************************************\n";
 
 	score_char = 

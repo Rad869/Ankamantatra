@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 06:01:30 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 06:54:24 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,12 +85,12 @@ void	play(t_game *game)
 	{
 		system("clear");
 		initialise_head(score);
-		printf("==============================================\n Fanontaniana %d\n==============================================\n", i + 1);
 		if (check == 1)
 		{
 			init_question(game);
 			i++;
 		}
+		printf("==============================================\n Fanontaniana %d\n==============================================\n", i);
 		check = 2;
 		printf("%s", game->question);
 		read_answer(answer, 100);
