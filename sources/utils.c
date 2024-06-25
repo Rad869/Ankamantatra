@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:03:54 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 08:23:11 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/06/25 12:38:39 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,7 @@ void	initialise_head(int score)
 "****************************************************************************************************************\n";
 
 	score_char = 
-"                                                                                                isa(score) : ";
+"                                                                                                        isa : ";
 	printf("%s", hackamantatra);
 	printf("%s", doc);
 	printf("%s%d\n", score_char, score);
@@ -165,18 +165,18 @@ void	check_result(int score, int i)
 
 	misaotra =
 "\n\n"
-" .S_SsS_S.    .S    sSSs   .S_SSSs      sSSs_sSSs    sdSS_SSSSSSbs   .S_sSSs     .S_SSSs            sSSs    sSSs    sSSs  \n"
-".SS~S*S~SS.  .SS   d%%SP  .SS~SSSSS    d%%SP~YS%%b   YSSS~S%SSSSSP  .SS~YS%%b   .SS~SSSSS          d%%SP   d%%SP   d%%SP  \n"
-"S%S `Y' S%S  S%S  d%S'    S%S   SSSS  d%S'     `S%b       S%S       S%S   `S%b  S%S   SSSS        d%S'    d%S'    d%S'    \n"
-"S%S     S%S  S%S  S%|     S%S    S%S  S%S       S%S       S%S       S%S    S%S  S%S    S%S        S%S     S%S     S%S     \n"
-"S%S     S%S  S&S  S&S     S%S SSSS%S  S&S       S&S       S&S       S%S    d*S  S%S SSSS%S        S&S     S&S     S&S     \n"
-"S&S     S&S  S&S  Y&Ss    S&S  SSS%S  S&S       S&S       S&S       S&S   .S*S  S&S  SSS%S        S&S_Ss  S&S_Ss  S&S_Ss  \n"
-"S&S     S&S  S&S  `S&&S   S&S    S&S  S&S       S&S       S&S       S&S_sdSSS   S&S    S&S        S&S~SP  S&S~SP  S&S~SP  \n"
-"S&S     S&S  S&S    `S*S  S&S    S&S  S&S       S&S       S&S       S&S~YSY%b   S&S    S&S        S&S     S&S     S&S     \n"
-"S*S     S*S  S*S     l*S  S*S    S&S  S*b       d*S       S*S       S*S   `S%b  S*S    S&S        S*b     S*b     S*b     \n"
-"S*S     S*S  S*S    .S*P  S*S    S*S  S*S.     .S*S       S*S       S*S    S%S  S*S    S*S        S*S.    S*S.    S*S.    \n"
-"S*S     S*S  S*S  sSS*S   S*S    S*S   SSSbs_sdSSS        S*S       S*S    S&S  S*S    S*S         SSSbs   SSSbs   SSSbs  \n"
-"SSS     S*S  S*S  YSS'    SSS    S*S    YSSP~YSSY         S*S       S*S    SSS  SSS    S*S          YSSP    YSSP    YSSP  \n"
+" .S_SsS_S.    .S    sSSs   .S_SSSs      sSSs_sSSs    sdSS_SSSSSSbs   .S_sSSs     .S_SSSs            sSSs   \n"
+".SS~S*S~SS.  .SS   d%%SP  .SS~SSSSS    d%%SP~YS%%b   YSSS~S%SSSSSP  .SS~YS%%b   .SS~SSSSS          d%%SP   \n"
+"S%S `Y' S%S  S%S  d%S'    S%S   SSSS  d%S'     `S%b       S%S       S%S   `S%b  S%S   SSSS        d%S'     \n"
+"S%S     S%S  S%S  S%|     S%S    S%S  S%S       S%S       S%S       S%S    S%S  S%S    S%S        S%S      \n"
+"S%S     S%S  S&S  S&S     S%S SSSS%S  S&S       S&S       S&S       S%S    d*S  S%S SSSS%S        S&S       \n"
+"S&S     S&S  S&S  Y&Ss    S&S  SSS%S  S&S       S&S       S&S       S&S   .S*S  S&S  SSS%S        S&S_Ss  \n"
+"S&S     S&S  S&S  `S&&S   S&S    S&S  S&S       S&S       S&S       S&S_sdSSS   S&S    S&S        S&S~SP  \n"
+"S&S     S&S  S&S    `S*S  S&S    S&S  S&S       S&S       S&S       S&S~YSY%b   S&S    S&S        S&S     \n"
+"S*S     S*S  S*S     l*S  S*S    S&S  S*b       d*S       S*S       S*S   `S%b  S*S    S&S        S*b     \n"
+"S*S     S*S  S*S    .S*P  S*S    S*S  S*S.     .S*S       S*S       S*S    S%S  S*S    S*S        S*S.    \n"
+"S*S     S*S  S*S  sSS*S   S*S    S*S   SSSbs_sdSSS        S*S       S*S    S&S  S*S    S*S         SSSbs  \n"
+"SSS     S*S  S*S  YSS'    SSS    S*S    YSSP~YSSY         S*S       S*S    SSS  SSS    S*S          YSSP  \n"
 "        SP   SP                  SP                       SP        SP                 SP                                 \n"
 "        Y    Y                   Y                        Y         Y                  Y                                  \n"
 "                                                                                                                           \n";
