@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 08:23:19 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/06/25 10:51:00 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,19 +33,19 @@ static int	check_answer(t_data *data, char *answer)
 		return (0);
 	}
 	sleep(1);
-	return(0);
+	return (0);
 }
 
 static void	init_question(t_data *data)
 {
 	int	rand_num;
-	
+
 	rand_num = get_random_num();
 	data->question = get_line("data/questions.txt", rand_num);
 	data->answer = get_line("data/responses.txt", rand_num);
 }
 
-void	empty_buf()
+static void	empty_buf(void)
 {
 	int	c;
 
@@ -54,7 +54,7 @@ void	empty_buf()
 		c = getc(stdin);
 }
 
-void	read_answer(char *str, int len)
+static void	read_answer(char *str, int len)
 {
 	char	*pos_line_break;
 
@@ -73,24 +73,25 @@ void	read_answer(char *str, int len)
 
 void	play(t_data *data)
 {
-	unsigned int	i;
-	char			answer[100];
-	int				check;
-	int				score;
+	size_t	i;
+	char	answer[100];
+	int		check;
+	int		score;
 
 	i = 0;
 	check = 1;
 	score = 3;
 	while (check != -1 && score && i < 5)
 	{
-		system("clear");
+		write(STDOUT_FILENO, "\x1b[2J", 4);
+		write(STDOUT_FILENO, "\x1b[H", 3);
 		initialise_head(score);
 		if (check == 1)
 		{
 			init_question(data);
 			i++;
 		}
-		printf("==============================================\n Fanontaniana %d\n==============================================\n", i);
+		printf("================\n Fanontaniana %ld\n================\n", i);
 		check = 2;
 		printf("%s", data->question);
 		read_answer(answer, 100);
@@ -110,6 +111,7 @@ void	play(t_data *data)
 		if (check_answer(data, answer))
 			check = 1;
 	}
-	system("clear");
+	write(STDOUT_FILENO, "\x1b[2J", 4);
+	write(STDOUT_FILENO, "\x1b[H", 3);
 	check_result(score, i);
 }

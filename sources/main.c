@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 12:24:15 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 08:22:59 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/06/25 08:27:22 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(void)
 {
 	t_data	data;
-	
+
 	play(&data);
 	return (0);
 }

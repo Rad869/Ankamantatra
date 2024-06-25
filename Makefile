@@ -6,11 +6,11 @@
 #    By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/24 10:52:34 by rrabeari          #+#    #+#              #
-#    Updated: 2024/06/24 15:07:00 by bhamed           ###   ########.fr        #
+#    Updated: 2024/06/25 10:24:45 by bhamed           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME      := ankamantatra
+NAME      := hackamantatra
 
 CC        := gcc
 CFLAGS    := -Wall -Werror -Wextra
