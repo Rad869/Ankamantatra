@@ -190,7 +190,7 @@ void	check_result(int score, int i)
 	}
 	if (i == 5)
 	{
-		printf("======>Arahabaina fa nahavita atraminy farany ianao ary mbola manana isa %d <======\n\n\n", score);
+		printf("======>Arahabaina fa nahavita hatraminy farany ianao ary mbola manana isa %d <======\n\n\n", score);
 		printf(GRN"%s"CRESET, succes);
 	}
 	if (score != 0 && i !=5)
