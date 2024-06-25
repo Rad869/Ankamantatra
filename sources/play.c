@@ -1,12 +1,11 @@
 /* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
+/*                                                                            */ /*                                                        :::      ::::::::   */
 /*   play.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 12:35:33 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 14:22:06 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,31 +13,23 @@
 
 static int	check_answer(t_data *data, char *answer)
 {
-	char	*give_up;
 	int	i;
 
 	i = 0;
-	give_up = "/afa-po\0";
 	lower_case(answer);
 	while (data->answer[i] != '\n')
 		i++;
 	data->answer[i] = '\0';
 	if (strcmp(answer, data->answer) == 0)
 	{
-		printf(GRN"\nMarina\n\n"CRESET);
+		printf(GRN"\nMarina\n"CRESET);
 		return (1);
-	}
-	else if (strcmp(answer, give_up) == 0)
-	{
-		printf(RED"\n%s anefa izany!\n\n"CRESET, data->answer);
-		return (2);
 	}
 	else
 	{
-		printf(RED"\nDiso\n\n"CRESET);
+		printf(RED"\nDiso\n"CRESET);
 		return (0);
 	}
-	sleep(1);
 	return (0);
 }
 
@@ -83,7 +74,6 @@ void	play(t_data *data)
 	char	answer[100];
 	int		check;
 	int		score;
-	int		result_chk;
 
 	i = 0;
 	check = 1;
@@ -102,34 +92,28 @@ void	play(t_data *data)
 		check = 2;
 		printf("%s", data->question);
 		read_answer(answer, 100);
-		if (answer[0] == 0x0E)
+		if (!strcmp(answer, "/s\0") || !strcmp(answer, "/afa-po\0"))
 		{
+			printf(YEL"\n%s anefa izany!\n\n"CRESET, data->answer);
 			check = 1;
 			score--;
 			free_resources(*data);
-			continue ;
 		}
-		if (!strcmp(answer, "/q\0") || !strcmp(answer, "/hiala\0"))
+		else if (!strcmp(answer, "/q\0") || !strcmp(answer, "/hiala\0"))
 		{
 			check = -1;
 			free_resources(*data);
 			continue ;
 		}
-		if ((result_chk = check_answer(data, answer)) == 1)
+		else if (check_answer(data, answer))
 		{
 			check = 1;
 			score++;
 		}
-		if (result_chk == 2 || result_chk == 0)
-		{
-			if (result_chk == 2)
-			{
-				check = 1;
-				free_resources(*data);
-			}
+		else
 			score--;
-		}
 		sleep(2);
+		tcflush(0, TCIFLUSH);
 	}
 	write(STDOUT_FILENO, "\x1b[2J", 4);
 	write(STDOUT_FILENO, "\x1b[H", 3);
