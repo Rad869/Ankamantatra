@@ -13,8 +13,8 @@ $ ./hackamantatra
 ```
 ## Commande
 ```bash
->/afa-po            /*To skip a question*/
->/s                 /*To skip a question*/
+>/afa-po            //To skip a question
+>/s                 \\To skip a question
 >/q                 /*To quit*/
 >/quit              /*to quit*/
 ```
