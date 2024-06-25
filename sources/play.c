@@ -1,11 +1,12 @@
 /* ************************************************************************** */
-/*                                                                            */ /*                                                        :::      ::::::::   */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
 /*   play.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 14:22:06 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/06/25 14:42:23 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +31,6 @@ static int	check_answer(t_data *data, char *answer)
 		printf(RED"\nDiso\n"CRESET);
 		return (0);
 	}
-	return (0);
 }
 
 static void	init_question(t_data *data)
@@ -77,7 +77,7 @@ void	play(t_data *data)
 
 	i = 0;
 	check = 1;
-	score = 3;
+	score = 5;
 	while (check != -1 && score)
 	{
 		write(STDOUT_FILENO, "\x1b[2J", 4);
@@ -94,7 +94,7 @@ void	play(t_data *data)
 		read_answer(answer, 100);
 		if (!strcmp(answer, "/s\0") || !strcmp(answer, "/afa-po\0"))
 		{
-			printf(YEL"\n%s anefa izany!\n\n"CRESET, data->answer);
+			printf(YEL"\n%s anefa izany!\n"CRESET, data->answer);
 			check = 1;
 			score--;
 			free_resources(*data);
