@@ -14,11 +14,12 @@
 
 static int	check_answer(t_data *data, char *answer)
 {
+	char	*give_up;
 	int	i;
 
 	i = 0;
+	give_up = "afa-po\0";
 	lower_case(answer);
-	lower_case(data->answer);
 	while (data->answer[i] != '\n')
 		i++;
 	data->answer[i] = '\0';
@@ -27,9 +28,14 @@ static int	check_answer(t_data *data, char *answer)
 		printf(GRN"\nMarina\n\n"CRESET);
 		return (1);
 	}
+	else if (strcmp(answer, give_up) == 0)
+	{
+		printf(RED"\n%s anefa izany!\n\n"CRESET, data->answer);
+		return (2);
+	}
 	else
 	{
-		printf(RED"\nDiso - %s anefa izany!\n\n"CRESET, data->answer);
+		printf(RED"\nDiso\n\n"CRESET);
 		return (0);
 	}
 	sleep(1);
@@ -77,11 +83,12 @@ void	play(t_data *data)
 	char	answer[100];
 	int		check;
 	int		score;
+	int		result_chk;
 
 	i = 0;
 	check = 1;
 	score = 3;
-	while (check != -1 && score && i < 5)
+	while (check != -1 && score)
 	{
 		write(STDOUT_FILENO, "\x1b[2J", 4);
 		write(STDOUT_FILENO, "\x1b[H", 3);
@@ -108,9 +115,17 @@ void	play(t_data *data)
 			free_resources(*data);
 			continue ;
 		}
-		if (check_answer(data, answer))
+		if ((result_chk = check_answer(data, answer)) == 1)
+		{
 			check = 1;
-		sleep(3);
+			score++;
+		}
+		if (result_chk == 2)
+		{
+			check = 1;
+			score--;
+		}
+		sleep(2);
 	}
 	write(STDOUT_FILENO, "\x1b[2J", 4);
 	write(STDOUT_FILENO, "\x1b[H", 3);
