@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/24 23:18:55 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 06:01:30 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,14 @@
 
 static int	check_answer(t_game *game, char *answer)
 {
+	int	i;
+
+	i = 0;
 	lower_case(answer);
 	lower_case(game->answer);
+	while (game->answer[i] != '\n')
+		i++;
+	game->answer[i] = '\0';
 	if (strcmp(answer, game->answer) == 0)
 	{
 		printf(GRN"\nMarina\n\n"CRESET);
@@ -23,7 +29,7 @@ static int	check_answer(t_game *game, char *answer)
 	}
 	else
 	{
-		printf(RED"\nDiso\n\n"CRESET);
+		printf(RED"\nDiso - %s anefa izany!\n\n"CRESET, game->answer);
 		return (0);
 	}
 	sleep(1);
@@ -37,6 +43,32 @@ static void	init_question(t_game *game)
 	rand_num = get_random_num();
 	game->question = get_line("data/questions.txt", rand_num);
 	game->answer = get_line("data/responses.txt", rand_num);
+}
+
+void	empty_buf()
+{
+	int	c;
+
+	c = 0;
+	while (c != '\n' && c != EOF)
+		c = getc(stdin);
+}
+
+void	read_answer(char *str, int len)
+{
+	char	*pos_line_break;
+
+	pos_line_break = NULL;
+	if (fgets(str, len, stdin) != NULL)
+	{
+		pos_line_break = strchr(str, '\n');
+		if (pos_line_break != NULL)
+			*pos_line_break = '\0';
+		else
+			empty_buf();
+	}
+	else
+		empty_buf();
 }
 
 void	play(t_game *game)
@@ -61,7 +93,7 @@ void	play(t_game *game)
 		}
 		check = 2;
 		printf("%s", game->question);
-		fgets(answer, 100, stdin);
+		read_answer(answer, 100);
 		if (answer[0] == 0x0E)
 		{
 			check = 1;
