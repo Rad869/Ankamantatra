@@ -7,7 +7,7 @@ Hackamantatra is a malagasy traditional guessing game.
 ## Installation
 Clone the repository to your computer, Then
 ```bash
-$cd Ankamantatra
+$ cd Ankamantatra
 $ make
 $ ./hackamantatra
 ```
