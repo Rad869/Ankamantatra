@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 14:03:54 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/24 23:11:02 by rrabeari         ###   ########.fr       */
+/*   Updated: 2024/06/25 06:13:30 by rrabeari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,8 @@ void	initialise_head(int score)
 "*    ity sy natao ampianarana ny malagasy zavatra vaovao raha tsy fantany taloha. Raha anova ankamantatra      *\n"
 "*    ianao nefa tsy nahamarina akory ilay teo aloha dia very ny isa anananao. Mahazo mamerina foana anefa      *\n"
 "*    raha toha ka tsy mbola afa-po. Raha anova ankamantatra dia tsindrio ny \"CTRL + D\", raha tsy ilalao      *\n"
-"*    intsony dia tsindrio ny \"ESC\". Mahazoa fafinaretana ary o.                                              *\n\n";
+"*    intsony dia tsindrio ny \"ESC\". Mahazoa fafinaretana ary o.                                              *\n"
+"****************************************************************************************************************\n";
 
 	score_char = 
 "                                                                                                isa(score) : ";
@@ -105,6 +106,7 @@ void	check_result(int score, int i)
 {
 	char	*succes;
 	char	*fail;
+	char	*misaotra;
 
 	succes = 
 "                                 ,.        ,.      ,.\n"
@@ -142,7 +144,7 @@ void	check_result(int score, int i)
 "                      ⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠋⠉⠉⠉⠙⠛⢿⠿⠛⠛⠛⠛⠛⠿⣿⣿⣿⣿⣿⣿\n"
 "                      ⣿⣿⣿⣿⣿⣿⡿⠁⠀⠀⢀⡀⠤⠤⢄⣀⠐⡄⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿\n"
 "                      ⣿⣿⣿⣿⣿⠟⠀⠀⠀⠐⠁⠀⠀⢀⣀⣀⣉⣒⣄⠉⠉⠉⢉⣀⣂⠈⠙⠻⣿⣿\n"
-"                      ⣿⣿⣿⠟⠉⡄⠀⠀⠀⠠⠤⣐⠭⠒⠉⠉⠉⠉⣒⣳⠈⠛⠂⠀⠀⣒⣛⡢⠈⢿n"
+"                      ⣿⣿⣿⠟⠉⡄⠀⠀⠀⠠⠤⣐⠭⠒⠉⠉⠉⠉⣒⣳⠈⠛⠂⠀⠀⣒⣛⡢⠈⢿\n"
 "                      ⣿⣿⠁⠀⠀⠃⠀⠀⠈⠛⠛⠠⣤⣶⠖⠙⠀⡉⢻⡿⣶⣿⣿⠁⡂⠠⠈⢿⠗⢸\n"
 "                      ⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠂⠭⠤⠤⠤⣤⠄⠊⠀⠀⠈⠀⠀⠀⠀⢀⣶⣿\n"
 "                      ⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠒⠉⠀⠀⠀⠈⠁⠒⠂⠈⠁⠘⢿⣿⣿\n"
@@ -162,6 +164,24 @@ void	check_result(int score, int i)
 "                      ⣿⣿⣿⡏⠀⠀⠀⠀⢰⣶⣤⣤⣤⣤⣤⣴⣦⡀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿\n"
 "                      ⣿⣿⣿⣷⣄⣀⣀⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⣄⣀⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿\n\n";
 
+	misaotra =
+"\n\n"
+" .S_SsS_S.    .S    sSSs   .S_SSSs      sSSs_sSSs    sdSS_SSSSSSbs   .S_sSSs     .S_SSSs            sSSs    sSSs    sSSs  \n"
+".SS~S*S~SS.  .SS   d%%SP  .SS~SSSSS    d%%SP~YS%%b   YSSS~S%SSSSSP  .SS~YS%%b   .SS~SSSSS          d%%SP   d%%SP   d%%SP  \n"
+"S%S `Y' S%S  S%S  d%S'    S%S   SSSS  d%S'     `S%b       S%S       S%S   `S%b  S%S   SSSS        d%S'    d%S'    d%S'    \n"
+"S%S     S%S  S%S  S%|     S%S    S%S  S%S       S%S       S%S       S%S    S%S  S%S    S%S        S%S     S%S     S%S     \n"
+"S%S     S%S  S&S  S&S     S%S SSSS%S  S&S       S&S       S&S       S%S    d*S  S%S SSSS%S        S&S     S&S     S&S     \n"
+"S&S     S&S  S&S  Y&Ss    S&S  SSS%S  S&S       S&S       S&S       S&S   .S*S  S&S  SSS%S        S&S_Ss  S&S_Ss  S&S_Ss  \n"
+"S&S     S&S  S&S  `S&&S   S&S    S&S  S&S       S&S       S&S       S&S_sdSSS   S&S    S&S        S&S~SP  S&S~SP  S&S~SP  \n"
+"S&S     S&S  S&S    `S*S  S&S    S&S  S&S       S&S       S&S       S&S~YSY%b   S&S    S&S        S&S     S&S     S&S     \n"
+"S*S     S*S  S*S     l*S  S*S    S&S  S*b       d*S       S*S       S*S   `S%b  S*S    S&S        S*b     S*b     S*b     \n"
+"S*S     S*S  S*S    .S*P  S*S    S*S  S*S.     .S*S       S*S       S*S    S%S  S*S    S*S        S*S.    S*S.    S*S.    \n"
+"S*S     S*S  S*S  sSS*S   S*S    S*S   SSSbs_sdSSS        S*S       S*S    S&S  S*S    S*S         SSSbs   SSSbs   SSSbs  \n"
+"SSS     S*S  S*S  YSS'    SSS    S*S    YSSP~YSSY         S*S       S*S    SSS  SSS    S*S          YSSP    YSSP    YSSP  \n"
+"        SP   SP                  SP                       SP        SP                 SP                                 \n"
+"        Y    Y                   Y                        Y         Y                  Y                                  \n"
+"                                                                                                                           \n";
+
 
 	initialise_head(score);
 	if (score == 0)
@@ -174,4 +194,6 @@ void	check_result(int score, int i)
 		printf("======>Arabaina fa nahavita atraminy farany ianao ary mbola manana isa %d <======\n\n\n", score);
 		printf(GRN"%s"CRESET, succes);
 	}
+	if (score != 0 && i !=5)
+		printf("%s", misaotra);
 }
