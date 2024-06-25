@@ -2,6 +2,7 @@
 
 ## Description
 This is the first hackaton project in 42 Antananarivo.
+
 Hackamantatra is a malagasy traditional guessing game.
 
 ## Installation
