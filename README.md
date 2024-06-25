@@ -11,7 +11,7 @@ $cd Ankamantatra
 $ make
 $ ./hackamantatra
 ```
-## Commande
+## Commands
 ```bash
 >/afa-po            #To skip a question
 >/s                 #To skip a question
@@ -20,4 +20,6 @@ $ ./hackamantatra
 ```
 
 ## Credit
-hratsima , rrabeari and bhamed
+- hratsima
+- rrabeari
+- bhamed
