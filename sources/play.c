@@ -92,9 +92,9 @@ void	play(t_data *data)
 		check = 2;
 		printf("%s", data->question);
 		read_answer(answer, 100);
-		if (!strcmp(answer, "/s\0") || !strcmp(answer, "/afa-po\0"))
+		if (!strcmp(answer, "/s") || !strcmp(answer, "/afa-po"))
 		{
-			printf(YEL"\n%s anefa izany!\n"CRESET, data->answer);
+			printf(YEL"\nValiny: %s\n"CRESET, data->answer);
 			check = 1;
 			score--;
 			free_resources(*data);
