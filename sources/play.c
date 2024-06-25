@@ -110,6 +110,7 @@ void	play(t_data *data)
 		}
 		if (check_answer(data, answer))
 			check = 1;
+		sleep(3);
 	}
 	write(STDOUT_FILENO, "\x1b[2J", 4);
 	write(STDOUT_FILENO, "\x1b[H", 3);

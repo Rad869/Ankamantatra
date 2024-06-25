@@ -85,7 +85,7 @@ void	initialise_head(int score)
 
 	doc = 
 "****************************************************************************************************************\n"
-"*    Lalao natao ialana voly fahiny ny Ankamantatra, nentina ampivoharana ny sain'i ankizy mba hikaroka sy     *\n"
+"*    Lalao natao ialana voly fahiny ny Ankamantatra, nentina ampivoharana ny sain'i ankizy mba hikaroka        *\n"
 "*    sy hatsilo saina. Mila mamaly ny fanotaniana izay apetraka ianao ka raha tsy misy diso ny fanoratanao     *\n"
 "*    ny valiny dia marina izany. Lalao natao mba hamerenana indray ny hasin'i tsipelina malagasy ity lalao     *\n"
 "*    ity sy natao ampianarana ny malagasy zavatra vaovao raha tsy fantany taloha. Raha anova ankamantatra      *\n"
@@ -190,7 +190,7 @@ void	check_result(int score, int i)
 	}
 	if (i == 5)
 	{
-		printf("======>Arabaina fa nahavita atraminy farany ianao ary mbola manana isa %d <======\n\n\n", score);
+		printf("======>Arahabaina fa nahavita atraminy farany ianao ary mbola manana isa %d <======\n\n\n", score);
 		printf(GRN"%s"CRESET, succes);
 	}
 	if (score != 0 && i !=5)
