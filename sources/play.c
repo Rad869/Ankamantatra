@@ -18,7 +18,7 @@ static int	check_answer(t_data *data, char *answer)
 	int	i;
 
 	i = 0;
-	give_up = "afa-po\0";
+	give_up = "/afa-po\0";
 	lower_case(answer);
 	while (data->answer[i] != '\n')
 		i++;
@@ -109,7 +109,7 @@ void	play(t_data *data)
 			free_resources(*data);
 			continue ;
 		}
-		if (answer[0] == 27)
+		if (!strcmp(answer, "/q\0") || !strcmp(answer, "/hiala\0"))
 		{
 			check = -1;
 			free_resources(*data);
@@ -120,9 +120,13 @@ void	play(t_data *data)
 			check = 1;
 			score++;
 		}
-		if (result_chk == 2)
+		if (result_chk == 2 || result_chk == 0)
 		{
-			check = 1;
+			if (result_chk == 2)
+			{
+				check = 1;
+				free_resources(*data);
+			}
 			score--;
 		}
 		sleep(2);

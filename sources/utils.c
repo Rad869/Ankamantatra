@@ -90,8 +90,8 @@ void	initialise_head(int score)
 "*    ny valiny dia marina izany. Lalao natao mba hamerenana indray ny hasin'i tsipelina malagasy ity lalao     *\n"
 "*    ity sy natao ampianarana ny malagasy zavatra vaovao raha tsy fantany taloha. Raha anova ankamantatra      *\n"
 "*    ianao nefa tsy nahamarina akory ilay teo aloha dia very ny isa anananao. Mahazo mamerina foana anefa      *\n"
-"*    raha toha ka tsy mbola afa-po. Raha anova ankamantatra dia tsindrio ny \"CTRL + N\", raha tsy ilalao        *\n"
-"*    intsony dia tsindrio ny \"ESC\". Mahazoa fafinaretana ary o.                                                *\n"
+"*    raha toha ka tsy mbola afa-po. Raha anova ankamantatra dia tsindrio ny hoe \"/afa-po\", raha tsy ilalao     *\n"
+"*    intsony dia tsindrio ny \"/hiala na /q\". Mahazoa fafinaretana ary o.                                       *\n"
 "****************************************************************************************************************\n";
 
 	score_char = 
