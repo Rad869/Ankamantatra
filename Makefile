@@ -15,30 +15,24 @@ NAME      := hackamantatra
 CC        := gcc
 CFLAGS    := -Wall -Werror -Wextra
 
-SRC_DIR   := sources
+SRCS      := sources/main.c \
+             sources/get_next_line/get_next_line.c \
+             sources/get_next_line/get_next_line_utils.c \
+             sources/play.c \
+             sources/utils.c
 
-SRC_FILES := main.c \
-             get_next_line/get_next_line.c \
-             get_next_line/get_next_line_utils.c \
-             play.c \
-             utils.c
-
-OBJ_DIR   := objs
-
-OBJS      := $(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
+OBJS      := $(SRCS:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ echo ''
-	$(CC) $(CFLAGS) -o $@ $^
+	$(CC) $(CFLAGS) -o $@ $(OBJS)
 
-$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	@ mkdir -p `dirname $@`
+.c.o:
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -Rf $(OBJ_DIR)/
+	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)

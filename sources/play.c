@@ -6,7 +6,7 @@
 /*   By: rrabeari <rrabeari@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 13:51:05 by bhamed            #+#    #+#             */
-/*   Updated: 2024/06/25 14:42:23 by bhamed           ###   ########.fr       */
+/*   Updated: 2024/07/01 13:25:54 by bhamed           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ void	play(t_data *data)
 			init_question(data);
 			i++;
 		}
-		printf("================\n Fanontaniana %ld\n================\n", i);
+		printf("================\n Fanontaniana %d\n================\n", i);
 		check = 2;
 		printf("%s", data->question);
 		read_answer(answer, 100);
